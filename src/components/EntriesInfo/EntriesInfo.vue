@@ -1,5 +1,5 @@
 <template>
-	<div class="data-table-info">
+	<div class="data-table-info" style="padding-top: 10px">
 		{{ entriesInfoText }}
 	</div>
 </template>

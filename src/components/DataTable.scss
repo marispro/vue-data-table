@@ -1,3 +1,9 @@
+.data-table-info,
+.data-table-pagination {
+	font-size: 0.8rem;
+}
+
+
 .data-table {
 	display: grid;
 	width: 100%;
@@ -9,9 +15,9 @@
 	}
 	@media (min-width: 1401px) {
 		grid-template-areas:
-			"perPage search search search"
+			"search info pagination pagination" // perPage
 			"table table table table"
-			"info pagination pagination download";
+			//" pagination"; // download
 	}
 	@media (min-width: 1051px) AND (max-width: 1400px) {
 		grid-template-areas:
@@ -56,5 +62,55 @@
 	&>div {
 		margin-top: 1rem;
 		max-width: 100%;
+	}
+}
+
+.data-table {
+	.table {
+		td {
+			height: auto;
+			padding: 5px 0.75rem;
+		}
+	}
+
+	.pagination {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		padding-left: 1px;
+		list-style: none;
+		border-radius: 0.25rem;
+
+		.page-link {
+			position: relative;
+			display: block;
+			padding: 0.5rem 0.75rem;
+			margin-left: -1px;
+			line-height: 1.25;
+			color: #4099de;
+			background-color: #fff;
+			border: 1px solid #dee2e6;
+		}
+
+		.page-item.disabled .page-link {
+			color: #6c757d;
+			pointer-events: none;
+			cursor: auto;
+			background-color: #fff;
+			border-color: #dee2e6;
+		}
+
+		.page-item.active .page-link {
+			z-index: 1;
+			color: #fff;
+			background-color: #4099de;;
+			border-color: #4099de;
+		}
+	}
+
+	.data-table-search-filter,
+	.data-table-info {
+		width: 100%;
+		margin-top: 0 !important;
 	}
 }

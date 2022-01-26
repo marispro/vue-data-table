@@ -4,6 +4,7 @@
 	display: flex;
 	align-items: center;
 	flex-wrap: nowrap;
+	margin-top: 0 !important;
 	&> :first-child {
 		margin-right: 10px;
 	}
