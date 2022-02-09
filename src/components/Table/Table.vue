@@ -8,7 +8,8 @@
 						:key="i"
 						:data-sorting="column.sortingMode"
 						:class="{ sortable: column.sortable }"
-						class="column"
+						:style="column.styles"
+						:class="column.classes"
 						@click="$emit('sort-column', column)">
 						<div class="column-content">
 							<span>{{ column.title }}</span>
@@ -36,9 +37,12 @@
 						<component
 							v-if="column.component"
 							:is="column.component"
-							:data="data"
+							:data="data[column.key]"
 							:column="column"
 						/>
+						<span v-else-if="typeof data[column.key] == 'object'" :style="data[column.key].styles" :class="data[column.key].classes">
+							{{ data[column.key].text }}
+						</span>
 						<span v-else>{{ data[column.key] }}</span>
 					</td>
 				</tr>

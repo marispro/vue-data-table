@@ -83,7 +83,12 @@ export function sortDataByColumn(data, column) {
 	} else if (column.type === "number") {
 		compareFunction = (a, b) => Number(a[key]) - Number(b[key]);
 	} else {
-		compareFunction = (a, b) => compareStrings(a[key], b[key]);
+		compareFunction = function(a, b){
+			let valA = typeof a[key] === 'object' ? a[key].text : a[key];
+			let valB = typeof b[key] === 'object' ? b[key].text : b[key];
+
+			return compareStrings(valA, valB);
+		};
 	}
 
 	/* sort */
