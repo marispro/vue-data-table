@@ -2,10 +2,12 @@
 	display: flex;
 	margin-left: auto;
 	padding-left: .3em;
+	font-size: 10px;
 	.icon {
 		width: 0.75em;
 		display: block;
 		height: 1em;
+		margin-left: 2px;
 		&.asc::after {
 			content: "\2193";
 		}

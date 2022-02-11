@@ -36,7 +36,7 @@
 					<td v-for="(column, j) in columns" :key="j">
 						<component
 							v-if="column.component"
-							:is="column.component"
+							v-bind:is="column.component"
 							:data="data[column.key]"
 							:column="column"
 						/>

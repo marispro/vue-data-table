@@ -14,10 +14,12 @@
 			v-bind="propsTable"
 			@sort-column="sortColumn"
 		/>
+		<!--
 		<data-table-entries-info
 			v-if="showEntriesInfo"
 			v-bind="propsEntriesInfo"
 		/>
+		-->
 		<data-table-pagination
 			v-if="showPagination"
 			v-bind="propsPagination"
