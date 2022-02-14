@@ -7,9 +7,8 @@
 						v-for="(column, i) in columns"
 						:key="i"
 						:data-sorting="column.sortingMode"
-						:class="{ sortable: column.sortable }"
+						:class="{ sortable: column.sortable, column.classes }"
 						:style="column.styles"
-						:class="column.classes"
 						class="p-2"
 						@click="$emit('sort-column', column)">
 						<div class="column-content">
