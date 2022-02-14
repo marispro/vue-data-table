@@ -19,7 +19,7 @@
 			font-size: 120%;
 			line-height: 1;
 			display: block;
-			color: black;
+			color: inherit;
 			opacity: 0.5;
 		}
 		[data-sorting="asc"] &.asc::after {

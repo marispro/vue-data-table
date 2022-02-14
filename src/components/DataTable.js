@@ -340,6 +340,8 @@ export default {
 				sortingIconComponent: this.sortingIconComponent,
 				sortingIndexComponent: this.sortingIndexComponent,
 				tableClass: this.tableClass,
+				tableStyle: this.tableStyle,
+				theadClass: this.theadClass
 			};
 		},
 
@@ -659,6 +661,14 @@ export default {
 		tableClass: {
 			type: String,
 			default: "table table-striped table-hover"
+		},
+		tableStyle: {
+			type: String,
+			default: ""
+		},
+		theadClass: {
+			type: String,
+			default: ""
 		},
 		text: {
 			type: Object,

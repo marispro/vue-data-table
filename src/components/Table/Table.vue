@@ -1,7 +1,7 @@
 <template>
 	<div class="data-table-table">
-		<table :class="tableClass">
-			<thead>
+		<table :class="tableClass" :style="tableStyle">
+			<thead :class="theadClass">
 				<tr>
 					<th
 						v-for="(column, i) in columns"
@@ -10,6 +10,7 @@
 						:class="{ sortable: column.sortable }"
 						:style="column.styles"
 						:class="column.classes"
+						class="p-2"
 						@click="$emit('sort-column', column)">
 						<div class="column-content">
 							<span>{{ column.title }}</span>
@@ -32,8 +33,8 @@
 						{{ emptyTableText }}
 					</td>
 				</tr>
-				<tr v-for="(data, i) in dataDisplayed" :key="i">
-					<td v-for="(column, j) in columns" :key="j">
+				<tr v-for="(data, i) in dataDisplayed" :key="i" :class="data.trClasses">
+					<td v-for="(column, j) in columns" :key="j" :class="data[column.key].tdClasses" class="p-2">
 						<component
 							v-if="column.component"
 							v-bind:is="column.component"

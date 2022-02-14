@@ -2,6 +2,8 @@ export default {
 	name: "DataTableTable",
 	props: {
 		tableClass: String,
+		theadClass: String,
+		tableStyle: String,
 		columns: Array,
 		data: Array,
 		dataDisplayed: Array,
